@@ -40,8 +40,8 @@ h3{margin:5px;}
 .diag_menu,
 .option_menu{display: inline-block;vertical-align: top;}
 /*********SCENE MENU************/
-.scene_menu{ width:250px;overflow-y:scroll;max-height: 600px;background:rgba(0, 0, 0, 0.73);color:white; padding:5px; min-height: 100%;}
-.scene_menu ul{width:100%;}
+.scene_menu{ width:250px;background:rgba(0, 0, 0, 0.73);color:white; padding:5px; min-height: 100%;}
+.scene_menu ul{width:100%;overflow-y:scroll;max-height: 600px;}
 .scene_menu li{position: relative;padding:5px;}
 .scene_menu li div{display: inline-block;width:210px;}
 .scene_menu li:hover{cursor:pointer;background:rgba(235, 202, 147, 0.5);}

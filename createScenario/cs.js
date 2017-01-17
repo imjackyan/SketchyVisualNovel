@@ -261,7 +261,7 @@ function deleteOption(index){
 function addDiag(){
     save();
     Diags = data.acts[selectedAct].scenes[selectedScene].diag;
-    diag = Diags[Diags.length-1];
+    diag = Diags.length==0?{"name":"name","content":"diag"}: Diags[Diags.length-1];
     Diags.push(diag);
     setupSceneDiag(selectedAct,selectedScene);
 }
