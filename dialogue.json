@@ -1,4 +1,24 @@
 {
+    "shortcuts":{
+        "background":[
+            "img/bg_westdale.jpg",
+            "img/bg_westdalein.jpg",
+            "img/bg_cpulab.jpg",
+            "img/bg_art.jpg",
+            "img/bg_math.jpg",
+            ""
+        ],
+        "character":[
+            "img/jack.png",
+            "img/yanyan.png",
+            "img/jim.png",
+            "img/harry.png",
+            "img/hongda.png",
+            "img/jordan.png",
+            "img/george.png",
+            ""
+        ]
+    },
     "acts": [{
         "actname":"The Beginning",
         "scene_index": 0,

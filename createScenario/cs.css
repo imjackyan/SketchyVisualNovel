@@ -49,10 +49,14 @@ h3{margin:5px;}
 .scene_menu .selected{background:rgba(93, 207, 206, 0.5);}
 
 /*********DATA MENU************/
-.data_menu{width:210px;}
+.data_menu{width:210px; position: relative;}
 .data_menu ul{margin:5px;}
-.data_menu li{padding:5px 5px;}
+.data_menu li{padding:5px 5px; position: relative;}
 .data_menu .edit-data{background:rgba(93, 207, 206, 0.5);}
+.data_menu .data_value_select{position: absolute;width:300px;left:80%; top:40px; background:rgba(0, 0, 0, 0.80);z-index:10; color:white; display: none;}
+.data_menu .data_value_select li:hover{background:rgba(235, 202, 147, 0.5); cursor:pointer; }
+.data_menu .data_value_select li{min-height: 14px;}
+
 
 /*********DIAG MENU************/
 .diag_menu{width:330px;}

@@ -42,6 +42,21 @@ $(document).ready(function(){
             }
         }
     });
+    $(".quickselect").focusin(function(){
+        $(".data_menu .data_value_select").show();
+        $(".data_menu .data_value_select li").hide()
+        selectedType = $(this).attr("name");
+        if(selectedType=="background")$(".data_menu .data_value_select .bg").show();
+        else $(".data_menu .data_value_select .char").show()
+
+        //indicates which char to quick select
+        if(selectedType == "left") $leftchar.addClass("selectedChar");
+        else $rightchar.addClass("selectedChar");
+    });
+    $(".quickselect").blur(function(){
+        if(!$(".data_menu .data_value_select").is(":hover"))$(".data_menu .data_value_select").hide();
+
+    });
 });
 function parseToData(){
     selectedAct=0;
@@ -50,6 +65,29 @@ function parseToData(){
     $(".top_edit>div").show();
     console.log(data);
     setupActsSelect(0);
+
+
+    //setup quickselect
+    str = '';
+    for (var i = 0; i < data.shortcuts.background.length; i++) {
+        str += '<li class="bg" onclick="updateShortcut(this,0)">'+data.shortcuts.background[i]+'</li>';
+    }
+    for (var i = 0; i < data.shortcuts.character.length; i++) {
+        str += '<li class="char" onclick="updateShortcut(this,1)">'+data.shortcuts.character[i]+'</li>';
+    }
+    $(".data_menu .data_value_select").html(str);
+}
+function updateShortcut(obj,type){
+    if(type==0){
+        //bg quickselect
+        $background.val($(obj).html());
+    }else if(type==1){
+        //char quickselect
+        if($leftchar.hasClass("selectedChar")){$leftchar.val($(obj).html()); $leftchar.removeClass("selectedChar");}
+        else {$rightchar.val($(obj).html()); $leftchar.removeClass("selectedChar");}
+
+    }
+    $(".data_menu .data_value_select").hide();
 }
 function setupActsSelect(actIndex){
     //default to actIndex
@@ -72,7 +110,7 @@ function changeActName(obj){
 
         $(obj).addClass("edit-actname");
         $(obj).html(`Act `+selectedAct+`: `+`<input name="act" value="`+data.acts[selectedAct].actname+`" type="text">`);
-        $(obj).find("input").is(":focus");
+        $(obj).find("input").select();
     }
 }
 function setupScenesSelect(index,defaultScene){
