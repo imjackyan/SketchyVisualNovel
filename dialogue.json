@@ -1,0 +1,100 @@
+{
+    "acts": [{
+        "actname":"The Beginning",
+        "scene_index": 0,
+        "scenes": [{
+            "scenename":"a",
+            "background": "img/bg_westdale.jpg",
+            "left": "img/yanyan.png",
+            "current_diag": 0,
+            "diag": [{
+                "name": "Yanyan",
+                "content": "Hmm... All these years I made Jack a birthday scenerio in AOE2"
+            }, {
+                "name": "Yanyan",
+                "content": "But he has never made me any :/"
+            }, {
+                "name": "Yanyan",
+                "content": "And he's also missed my birthday on Oct 11th"
+            }, {
+                "name": "Yanyan",
+                "content": "What a dick"
+            }],
+            "outcome": 1
+
+        }, {
+            "scenename":"a",
+            "left": "img/yanyan.png",
+            "right": "img/jack.png",
+            "current_diag": 0,
+            "diag": [{
+                "name": "Jack",
+                "content": "What the fuck"
+            }, {
+                "name": "Jack",
+                "content": "Fuck you"
+            }],
+            "outcome": 2
+        }, {
+            "scenename":"a",
+            "choice": [{
+                "outcome": 3,
+                "content": "Why are you so angry?"
+            }, {
+                "outcome": 4,
+                "content": "*Slap him* (bad choice)"
+            }, {
+                "outcome": 5,
+                "content": "*Call Hongda* (good choice)"
+            }]
+        }, {
+            "scenename":"a",
+            "left": "img/yanyan.png",
+            "right": "img/jack.png",
+            "current_diag": 0,
+            "diag": [{
+                "name": "Jack",
+                "content": "Cause you called me a dick"
+            }, {
+                "name": "Jack",
+                "content": "Friends don't do that"
+            }],
+            "outcome": 2
+        }, {
+            "scenename":"a",
+            "left": "img/yanyan.png",
+            "right": "img/jack.png",
+            "current_diag": 0,
+            "diag": [{
+                "name": "Jack",
+                "content": "W-What!!?"
+            }],
+            "outcome": 4
+        },{
+            "scenename":"a",
+            "left": "img/hongda.png",
+            "right": "img/jack.png",
+            "current_diag": 0,
+            "diag": [{
+                "name": "Hongda",
+                "content": "I have arrived my friends! Which of you mortals called me?"
+            }],
+            "outcome": 4
+        }]
+    },{
+        "actname":"Continues",
+        "scene_index": 0,
+        "scenes":[{
+            "scenename":"a",
+            "left": "img/hongda.png",
+            "right": "img/jack.png",
+            "current_diag": 0,
+            "diag": [{
+                "name": "Hongda",
+                "content": "I have arrived my friends! Which of you mortals called me?"
+            }],
+            "outcome": 4
+            }]
+        }
+    ]
+}

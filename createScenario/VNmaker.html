@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="cs.css">
+        <script type="text/javascript" src="../jquery.js"></script>
+        <script type="text/javascript" src="cs.js"></script>
+
+        <title>VN maker</title>
+    </head>
+    <body>
+        <ul class="top_menu">
+            <li class="act_selection">
+                <h3 style="text-align:left;" onclick="changeActName(this)">Acts</h3>
+                <ul>
+                    <li>Act 1: The beginning</li>
+                    <li>Act 2</li>
+                </ul>
+            </li>
+            <li style="float:right;width:auto;line-height:40px; border-left:1px solid white;">
+                VN Maker by JACK</li>
+            <li style="float:right;width:auto;line-height:40px;" onclick="save()">
+                SAVE</li>
+        </ul>
+
+
+        <div class="top_edit">
+            <div class="scene_menu">
+                <h3>Scene Selection</h3><hr>
+                <ul class="">
+                    <li><div>1: What happened?</div><a href="javascript:void(0)">x</a></li>
+                    <li><div>2: Holy crap that's dangerous</div><a href="javascript:void(0)">x</a></li>
+                </ul>
+            </div>
+            <div class="data_menu">
+                <h3>Data</h3>
+                <ul>
+                    <li><span>Scene Name </span><br>
+                        <input type="text" name="sceneName" value=""></li>
+                    <li><span>Background </span><br>
+                        <input type="text" name="background" value=""></li>
+                    <li><span>Left character </span><br>
+                        <input type="text" name="left" value=""></li>
+                    <li><span>Right character </span><br>
+                        <input type="text" name="right" value=""></li>
+                    <li><span>Outcome </span><br>
+                        <input type="text" name="outcome" value=""></li>
+                </ul>
+            </div>
+            <div class="diag_menu">
+                <h3>Dialogues</h3>
+                <span>Name / Content</span>
+                <hr>
+                <ul>
+                    <li onclick="diag_changeEdit(event,this,0)">
+                        <span class="name">Jack</span>
+                        <span class="content">Oh no what the hell?</span>
+                    </li>
+                    <li onclick="diag_changeEdit(event,this,1)">
+                        <span class="name">Cy</span>
+                        <span class="content">I am stupid</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="option_menu">
+                <h3>Options</h3>
+                <span>Content / Outcome</span>
+                <hr>
+                <ul>
+                    <li onclick="option_changeEdit(event,this,0)">
+                        <span class="content">Fuck him up</span>
+                        <span class="outcome">0</span>
+                    </li>
+                    <li>
+                        <span class="content">OHHHHHHHHH?</span>
+                        <span class="outcome">1</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="IO_menu">
+            <input type="button" name="" value="JSON to VN Maker" onclick="parseToData()">
+            <input type="button" name="" value="Encode to JSON" onclick="encodeToJSON()">
+            <textarea name="JSONfields" rows="20" cols="50"></textarea>
+        </div>
+    </body>
+</html>
