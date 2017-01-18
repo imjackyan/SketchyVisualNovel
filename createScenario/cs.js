@@ -58,6 +58,28 @@ $(document).ready(function(){
 
     });
 });
+function newStory(){
+    if(confirm("Erase existing content to create a fresh story?")){
+        data = {
+            "shortcuts":{
+                "background":[
+                    ""
+                ],
+                "character":[
+                    ""
+                ]
+            },
+            "acts": [{
+                "actname":"Click to edit",
+                "scene_index": 0,
+                "scenes": []
+            }]
+        };
+        encodeToJSON();
+        parseToData();
+        encodeToJSON();
+    }
+}
 function parseToData(){
     selectedAct=0;
     selectedScene=0;
@@ -293,7 +315,7 @@ function deleteScene(index){
     setupScenesSelect(selectedAct);
 }
 function addAct(){
-    act = {"actname":"Click here","scene_index": 0,"scenes":[]}
+    act = {"actname":"Click to edit","scene_index": 0,"scenes":[]}
     data.acts.push(act);
     setupActsSelect(data.acts.length-1);
 }
@@ -364,5 +386,17 @@ function encodeToJSON(){
     if(true){
         //true placeholder
         $(".IO_menu textarea").val(JSON.stringify(data));
+    }
+}
+//help tabs
+function helpTab(obj,tab){
+    $(".help_menu .content .tab li").removeClass("selected");
+    $(obj).addClass("selected");
+    if(tab==0){
+        $(".help_menu .content .load").hide();
+        $(".help_menu .content .new").show();
+    }else{
+        $(".help_menu .content .load").show();
+        $(".help_menu .content .new").hide();
     }
 }

@@ -85,3 +85,16 @@ h3{margin:5px;}
 
 /*********IO MENU************/
 .IO_menu textarea{width:100%;}
+
+/*********HELP MENU************/
+.help_menu{position: fixed; left:100%; margin-left:-50px; transition: 0.5s ease;
+    top:30%; width:350px;height:400px;}
+.help_menu:hover{margin-left:-350px;}
+.help_menu:hover>.circ{margin-left:55px;margin-top:0px;background:rgba(255, 255, 255, 0);}
+.help_menu .circ{background: rgba(0, 0, 0, 0.8); width:50px;height:50px; line-height: 50px;color:white;text-align: center; transition: 0.5s ease; position: relative; border-top-left-radius: 50%;border-bottom-left-radius: 50%;}
+.help_menu .content{background:rgba(0, 0, 0, 0.8); width:300px;position: absolute; left:50px;margin:auto; }
+.help_menu .content p{color:white; margin: 0px 10px;}
+.help_menu ul{color: white;padding:20px 0px 0px 100px;border-bottom: 2px solid black;}
+.help_menu ul li{display: inline-block;padding: 5px 10px;}
+.help_menu ul li:hover{background: rgba(235, 202, 147, 0.5);cursor: pointer;}
+.help_menu .selected{background:rgba(0, 0, 0, 0.8);}

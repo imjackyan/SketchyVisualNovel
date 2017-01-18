@@ -4,6 +4,7 @@ var $diag_content;
 var $left_char;
 var $right_char;
 var $background;
+var currentAct=0;
 var data;
 
 $(document).ready(function(){
@@ -22,7 +23,7 @@ $(document).ready(function(){
         dataType:'json',
         success:function(_data){
             data = data.responseJSON;
-            setScene();
+            setScene(0);
         }
     });
 });
@@ -35,15 +36,16 @@ function generateChoice(choices){
     $choice_cont.show();
 }
 function choose(index){
-    data.acts[0].scene_index = data.acts[0].scenes[data.acts[0].scene_index].choice[index].outcome;
+    data.acts[currentAct].scene_index = data.acts[currentAct].scenes[data.acts[currentAct].scene_index].choice[index].outcome;
     setScene();
     $choice_cont.hide();
 }
 
 
-function setScene(){
+function setScene(act){
+    //arg is act number
     //needs to find if over limit
-    Scene = data.acts[0].scenes[data.acts[0].scene_index];
+    Scene = data.acts[act].scenes[data.acts[act].scene_index];
     if(Scene.background)$background.attr("src",Scene.background);
 
     if(!Scene.choice){
@@ -56,11 +58,11 @@ function setScene(){
         if(Scene.diag[Scene.current_diag].name) $diag_speaker.html(Scene.diag[Scene.current_diag].name);
         else $diag_speaker.html("");
     }else{
-        generateChoice(Scene.choice)
+        generateChoice(Scene.choice);
     }
 }
 function nextDiag(){
-    Scene = data.acts[0].scenes[data.acts[0].scene_index];
+    Scene = data.acts[currentAct].scenes[data.acts[currentAct].scene_index];
     Scene.current_diag++;
     if(Scene.current_diag < Scene.diag.length){
         $diag_content.html(Scene.diag[Scene.current_diag].content);
@@ -68,7 +70,13 @@ function nextDiag(){
         else $diag_speaker.html("");
     }
     else{
-        data.acts[0].scene_index = Scene.outcome;
-        setScene();
+        if (Scene.outcome < 0) {
+            currentAct++;
+            setScene(currentAct);
+        }
+        else{
+            data.acts[currentAct].scene_index = Scene.outcome;
+            setScene(0);
+        }
     }
 }

@@ -13,8 +13,6 @@
             <li class="act_selection">
                 <h3 style="text-align:left;" onclick="changeActName(this)">Acts</h3>
                 <ul>
-                    <li>Act 1: The beginning</li>
-                    <li>Act 2</li>
                 </ul>
             </li>
             <li style="float:right;width:auto;line-height:40px; border-left:1px solid white;">
@@ -87,7 +85,37 @@
         <div class="IO_menu">
             <input type="button" name="" value="JSON to VN Maker" onclick="parseToData()">
             <input type="button" name="" value="Encode to JSON" onclick="encodeToJSON()">
+            <input type="button" name="" value="Create new story" onclick="newStory()">
             <textarea name="JSONfields" rows="20" cols="50"></textarea>
         </div>
+
+        <div class="help_menu">
+            <div class="content">
+                <ul class="tab">
+                    <li onclick="helpTab(this,0)">New Story</li>
+                    <li onclick="helpTab(this,1)" class="selected">Load Story</li>
+                </ul>
+                <div class="new" style="display:none;">
+                    <p><br>
+                        1. Click "Create New Story" <br><br>
+
+                    </p>
+                </div>
+                <div class="load">
+                    <p><br>
+                        1. Copy and paste the JSON script into the text area below and click "JSON to VN Maker"<br><br>
+                    </p>
+                </div>
+                <p>2. Navigate between acts and scenes to change respective data <br><br>
+                3. Edit act name by clicking the act name on the top menu bar <br><br>
+                4. Save ocassionaly (though it saves itself most of the time) <br><br>
+                5. Click "Encode to JSON" when story is finished to output JSON script <br><br></p>
+            </div>
+            <div class="circ">
+                &nbspHELP
+            </div>
+        </div>
+
+
     </body>
 </html>
